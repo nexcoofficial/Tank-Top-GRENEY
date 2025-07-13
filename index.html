@@ -134,13 +134,28 @@
                     .gallery-thumbs {max-width:99vw;}
                 }
             </style>
+            
+</head>
+<body>
+    <header>
+        <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;">
+            <div class="logo">greney.underwear.id</div>
+            <div class="contact">
+                <span style="font-size:1.2rem;"></span>
+                <span style="margin-left:8px;"></span>
+            </div>
+        </div>
+    </header>
+    <main class="product-section">
+        <div class="container">
+            <div>
                 
                 <div class="gallery-outer">
                     <div class="gallery-mainbox">
                         <img src="https://greney.com/cdn/shop/files/1_e6c3cda4-4b9d-44de-b2fd-0aef11aaeaf4_720x.jpg?v=1741233633" id="galleryMainImage" alt="Gambar Utama Produk">
                     </div>
                     <div class="gallery-thumbs">
-                        <img src="https://greney.com/cdn/shop/files/1_e6c3cda4-4b9d-44de-b2fd-0aef11aaeaf4_720x.jpg?v=1741233633" class="gallery-thumbimg active" onclick="showGalleryImage(0)" alt="Thumbnail 1"><img src="https://greney.com/cdn/shop/files/2_c6270156-9c8c-4b47-a8a3-a1291eea6ede_360x.jpg?v=1741940617" class="gallery-thumbimg" onclick="showGalleryImage(1)" alt="Thumbnail 2"><img src="https://greney.com/cdn/shop/files/3_1e308fac-7866-4a61-9ff6-1815bb170304_360x.jpg?v=1741940617" class="gallery-thumbimg" onclick="showGalleryImage(2)" alt="Thumbnail 3"><img src="https://greney.com/cdn/shop/files/6_8a7731f4-d841-4184-8cd6-1abf7c9ed074_360x.jpg?v=1741940617" class="gallery-thumbimg" onclick="showGalleryImage(3)" alt="Thumbnail 4"><img src="https://greney.com/cdn/shop/files/8_a88e105e-b915-4e07-b5c6-9c7223bc4584_360x.jpg?v=1741940617" class="gallery-thumbimg" onclick="showGalleryImage(4)" alt="Thumbnail 5"><img src="https://greney.com/cdn/shop/files/4_d3e2fada-d773-4413-8ffe-2e55c9e03cd9_360x.jpg?v=1741940617" class="gallery-thumbimg" onclick="showGalleryImage(5)" alt="Thumbnail 6"><img src="https://greney.com/cdn/shop/files/5_1728dd70-db83-41f4-96b7-63700d0daeab_360x.jpg?v=1741940617" class="gallery-thumbimg" onclick="showGalleryImage(6)" alt="Thumbnail 7"><img src="https://greney.com/cdn/shop/files/7_ccc1e5f7-381d-4fb7-ad72-5633285e8cdf_360x.jpg?v=1741940617" class="gallery-thumbimg" onclick="showGalleryImage(7)" alt="Thumbnail 8">
+                        <img src="https://greney.com/cdn/shop/files/1_e6c3cda4-4b9d-44de-b2fd-0aef11aaeaf4_720x.jpg?v=1741233633" class="gallery-thumbimg active" onclick="showGalleryImage(0)" alt="Thumbnail 1"><img src="https://greney.com/cdn/shop/files/2_c6270156-9c8c-4b47-a8a3-a1291eea6ede_360x.jpg?v=1741940617" class="gallery-thumbimg" onclick="showGalleryImage(1)" alt="Thumbnail 2"><img src="https://greney.com/cdn/shop/files/3_1e308fac-7866-4a61-9ff6-1815bb170304_360x.jpg?v=1741940617" class="gallery-thumbimg" onclick="showGalleryImage(2)" alt="Thumbnail 3"><img src="https://greney.com/cdn/shop/files/6_8a7731f4-d841-4184-8cd6-1abf7c9ed074_360x.jpg?v=1741940617" class="gallery-thumbimg" onclick="showGalleryImage(3)" alt="Thumbnail 4"><img src="https://greney.com/cdn/shop/files/7_ccc1e5f7-381d-4fb7-ad72-5633285e8cdf_360x.jpg?v=1741940617" class="gallery-thumbimg" onclick="showGalleryImage(4)" alt="Thumbnail 5"><img src="https://greney.com/cdn/shop/files/8_a88e105e-b915-4e07-b5c6-9c7223bc4584_360x.jpg?v=1741940617" class="gallery-thumbimg" onclick="showGalleryImage(5)" alt="Thumbnail 6"><img src="https://greney.com/cdn/shop/files/4_d3e2fada-d773-4413-8ffe-2e55c9e03cd9_360x.jpg?v=1741940617" class="gallery-thumbimg" onclick="showGalleryImage(6)" alt="Thumbnail 7"><img src="https://greney.com/cdn/shop/files/5_1728dd70-db83-41f4-96b7-63700d0daeab_360x.jpg?v=1741940617" class="gallery-thumbimg" onclick="showGalleryImage(7)" alt="Thumbnail 8">
                     </div>
                 </div>
             
@@ -167,14 +182,21 @@ Salute a better you!
 GRENEY! Greeting Next You！</div>
                 <ul class="feature-list"><li>✔️ Penasaran dengan produk terbaru dan diskon eksklusif GRENEY Buruan buka berandanya</li><li>✔️ Cuss~Jangan sampai ketinggalan</li></ul>
                 <form id="orderForm" autocomplete="off" onsubmit="return false;">
-                    
-                <div class="variant-selection">
-                    <label>Pilih Varian:</label>
-                    <select id="variantSelect" required onchange="updateOrderSummary()">
-                        <option value="">-- Pilih Varian --</option>
-                        <option value="COKELAT-M">COKELAT-M</option><option value="COKELAT-L">COKELAT-L</option><option value="COKELAT-XL">COKELAT-XL</option><option value="HITAM-M">HITAM-M</option><option value="HITAM-L">HITAM-L</option><option value="HITAM-XL">HITAM-XL</option><option value="KULIT-M">KULIT-M</option><option value="KULIT-L">KULIT-L</option><option value="KULIT-XL">KULIT-XL</option>
-                    </select>
-                </div>
+                    <div class="variant-selection">
+                    <div class="form-group">
+                        <label>Pilih Warna:</label>
+                        <select id="colorSelect" required onchange="updateOrderSummary()">
+                            <option value="">-- Pilih Warna --</option>
+                            <option value="cokelat">cokelat</option><option value="hitam">hitam</option><option value="kulit">kulit</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Pilih Ukuran:</label>
+                        <select id="sizeSelect" required onchange="updateOrderSummary()">
+                            <option value="">-- Pilih Ukuran --</option>
+                            <option value="M">M</option><option value="L">L</option><option value="XL">XL</option>
+                        </select>
+                    </div></div>
                     <div class="quantity">
                         <label>Jumlah Pesanan:</label>
                         <div class="qty-controls">
@@ -258,7 +280,7 @@ GRENEY! Greeting Next You！</div>
             </div>
         </div>
     </main>
-    <footer style="text-align:center; color:#7f8899; font-size:13px; margin:25px 0 15px 0;">&copy; 2025 greney.underwear.id.</footer>
+    <footer style="text-align:center; color:#7f8899; font-size:13px; margin:25px 0 15px 0;">&copy; 2025 Powered by greney.underwear.id. </footer>
     
             <script>
                 const indonesiaData = {"Jawa Barat":{"Bandung":["Cidadap","Cicendo","Coblong","Bandung Wetan"],"Bekasi":["Bekasi Barat","Bekasi Timur","Bekasi Selatan","Bekasi Utara"],"Bogor":["Bogor Tengah","Bogor Utara","Bogor Selatan","Bogor Timur"],"Depok":["Pancoran Mas","Sukmajaya","Sawangan","Cipayung"],"Cimahi":["Cimahi Selatan","Cimahi Tengah","Cimahi Utara"]},"DKI Jakarta":{"Jakarta Pusat":["Gambir","Tanah Abang","Menteng","Senen"],"Jakarta Selatan":["Kebayoran Baru","Tebet","Setiabudi","Mampang Prapatan"],"Jakarta Timur":["Matraman","Pulogadung","Jatinegara","Duren Sawit"],"Jakarta Barat":["Grogol Petamburan","Taman Sari","Tambora","Kebon Jeruk"],"Jakarta Utara":["Penjaringan","Pademangan","Tanjung Priok","Koja"]},"Jawa Tengah":{"Semarang":["Semarang Tengah","Semarang Utara","Semarang Selatan","Semarang Timur"],"Solo":["Laweyan","Serengan","Pasar Kliwon","Jebres"],"Yogyakarta":["Gondokusuman","Jetis","Tegalrejo","Umbulharjo"]},"Jawa Timur":{"Surabaya":["Genteng","Gubeng","Tegalsari","Wonokromo"],"Malang":["Klojen","Blimbing","Kedungkandang","Sukun"],"Sidoarjo":["Sidoarjo","Buduran","Candi","Porong"]},"Banten":{"Tangerang":["Tangerang Kota","Cipondoh","Karawaci","Pinang"],"Serang":["Serang Kota","Kasemen","Walantaka","Curug"]},"Bali":{"Denpasar":["Denpasar Barat","Denpasar Selatan","Denpasar Timur","Denpasar Utara"],"Badung":["Mengwi","Abiansemal","Petang","Kuta Utara"]},"Sumatera Utara":{"Medan":["Medan Kota","Medan Barat","Medan Timur","Medan Utara"],"Binjai":["Binjai Kota","Binjai Barat","Binjai Timur","Binjai Utara"]},"Sumatera Selatan":{"Palembang":["Ilir Barat I","Ilir Timur I","Seberang Ulu I","Kertapati"]},"Kalimantan Timur":{"Balikpapan":["Balikpapan Kota","Balikpapan Barat","Balikpapan Timur","Balikpapan Selatan"],"Samarinda":["Samarinda Kota","Samarinda Ulu","Samarinda Ilir","Sungai Kunjang"]},"Sulawesi Selatan":{"Makassar":["Makassar","Mariso","Mamajang","Tamalate"]}};
@@ -266,7 +288,7 @@ GRENEY! Greeting Next You！</div>
                 const PRODUCT_PRICE = 156000;
                 const productName = "Tank Top Wanita Dengan Cup Bra Empuk";
                 const whatsappNumber = "6281225681788";
-                let galleryImages = ["https://greney.com/cdn/shop/files/1_e6c3cda4-4b9d-44de-b2fd-0aef11aaeaf4_720x.jpg?v=1741233633","https://greney.com/cdn/shop/files/2_c6270156-9c8c-4b47-a8a3-a1291eea6ede_360x.jpg?v=1741940617","https://greney.com/cdn/shop/files/3_1e308fac-7866-4a61-9ff6-1815bb170304_360x.jpg?v=1741940617","https://greney.com/cdn/shop/files/6_8a7731f4-d841-4184-8cd6-1abf7c9ed074_360x.jpg?v=1741940617","https://greney.com/cdn/shop/files/8_a88e105e-b915-4e07-b5c6-9c7223bc4584_360x.jpg?v=1741940617","https://greney.com/cdn/shop/files/4_d3e2fada-d773-4413-8ffe-2e55c9e03cd9_360x.jpg?v=1741940617","https://greney.com/cdn/shop/files/5_1728dd70-db83-41f4-96b7-63700d0daeab_360x.jpg?v=1741940617","https://greney.com/cdn/shop/files/7_ccc1e5f7-381d-4fb7-ad72-5633285e8cdf_360x.jpg?v=1741940617"];
+                let galleryImages = ["https://greney.com/cdn/shop/files/1_e6c3cda4-4b9d-44de-b2fd-0aef11aaeaf4_720x.jpg?v=1741233633","https://greney.com/cdn/shop/files/2_c6270156-9c8c-4b47-a8a3-a1291eea6ede_360x.jpg?v=1741940617","https://greney.com/cdn/shop/files/3_1e308fac-7866-4a61-9ff6-1815bb170304_360x.jpg?v=1741940617","https://greney.com/cdn/shop/files/6_8a7731f4-d841-4184-8cd6-1abf7c9ed074_360x.jpg?v=1741940617","https://greney.com/cdn/shop/files/7_ccc1e5f7-381d-4fb7-ad72-5633285e8cdf_360x.jpg?v=1741940617","https://greney.com/cdn/shop/files/8_a88e105e-b915-4e07-b5c6-9c7223bc4584_360x.jpg?v=1741940617","https://greney.com/cdn/shop/files/4_d3e2fada-d773-4413-8ffe-2e55c9e03cd9_360x.jpg?v=1741940617","https://greney.com/cdn/shop/files/5_1728dd70-db83-41f4-96b7-63700d0daeab_360x.jpg?v=1741940617"];
                 let galleryCurrent = 0;
                 function showGalleryImage(idx) {
                     galleryCurrent = idx;
