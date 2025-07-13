@@ -134,6 +134,40 @@
                     .gallery-mainbox {max-width:99vw;}
                     .gallery-thumbs {max-width:99vw;}
                 }
+                /* Lightbox styles */
+                .lightbox {
+                    display: none;
+                    position: fixed;
+                    z-index: 9999;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.9);
+                    text-align: center;
+                }
+                .lightbox img {
+                    max-width: 90%;
+                    max-height: 90%;
+                    margin-top: 5%;
+                }
+                .lightbox-close {
+                    position: absolute;
+                    top: 20px;
+                    right: 30px;
+                    color: white;
+                    font-size: 40px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    opacity: 0.7;
+                    transition: opacity 0.3s;
+                }
+                .lightbox-close:hover {
+                    opacity: 1;
+                }
+                .gallery-mainbox {
+                    cursor: pointer;
+                }
             </style>
             
 </head>
@@ -155,7 +189,7 @@
             <div>
                 
                 <div class="gallery-outer">
-                    <div class="gallery-mainbox">
+                    <div class="gallery-mainbox" onclick="openLightbox(galleryImages[galleryCurrent])">
                         <img src="https://greney.com/cdn/shop/files/1_e6c3cda4-4b9d-44de-b2fd-0aef11aaeaf4_720x.jpg?v=1741233633" id="galleryMainImage" alt="Gambar Utama Produk">
                     </div>
                     <div class="gallery-thumbs">
@@ -166,6 +200,7 @@
             </div>
             <div class="product-info">
                 <div class="product-title">Tank Top Wanita Dengan Cup Bra Empuk</div>
+                <div style="font-size:1.15rem; color:#999; text-decoration:line-through; margin-bottom:5px;">Rp 195.000</div>
                 <div class="price">Rp 156.000</div>
                 <div class="desc">Hidup:
 
@@ -199,7 +234,9 @@ GRENEY! Greeting Next You！</div>
                             <option value="cokelat">cokelat</option><option value="hitam">hitam</option><option value="kulit">kulit</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom:18px;">
+                        <label style="display:block; margin-bottom:8px;">Panduan Ukuran:</label>
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0g-mbdocssql2opea.webp" style="width:100%; max-width:400px; border-radius:8px; margin-bottom:12px;">
                         <label>Pilih Ukuran:</label>
                         <select id="sizeSelect" required onchange="updateOrderSummary()">
                             <option value="">-- Pilih Ukuran --</option>
@@ -263,24 +300,6 @@ GRENEY! Greeting Next You！</div>
                             <span id="total">Rp 156.000</span>
                         </div>
                         
-                <div class="payment-methods">
-                    <h4>Metode Pembayaran:</h4>
-                    <div class="payment-options">
-                        <div class="payment-option">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='30' viewBox='0 0 50 30'%3E%3Crect width='50' height='30' rx='4' fill='%232563EB'/%3E%3Ctext x='25' y='18' text-anchor='middle' font-size='10' fill='white' font-weight='bold'%3EBANK%3C/text%3E%3C/svg%3E" alt="Bank Transfer">
-                            <span>Transfer Bank</span>
-                        </div>
-                        <div class="payment-option">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='30' viewBox='0 0 50 30'%3E%3Crect width='50' height='30' rx='4' fill='%2310B981'/%3E%3Ctext x='25' y='18' text-anchor='middle' font-size='10' fill='white' font-weight='bold'%3ECOD%3C/text%3E%3C/svg%3E" alt="Cash on Delivery">
-                            <span>COD</span>
-                        </div>
-                        <div class="payment-option">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='30' viewBox='0 0 50 30'%3E%3Crect width='50' height='30' rx='4' fill='%23EC4899'/%3E%3Ctext x='25' y='18' text-anchor='middle' font-size='9' fill='white' font-weight='bold'%3EE-WALLET%3C/text%3E%3C/svg%3E" alt="E-Wallet">
-                            <span>E-Wallet</span>
-                        </div>
-                    </div>
-                </div>
-            
                     </div>
                     <button type="button" onclick="submitOrder()" class="whatsapp-btn">
                         📱 Pesan via WhatsApp
@@ -289,6 +308,10 @@ GRENEY! Greeting Next You！</div>
             </div>
         </div>
     </main>
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Full size image">
+    </div>
     <footer style="text-align:center; color:#7f8899; font-size:13px; margin:25px 0 15px 0;">&copy; 2025 greney.underwear.id</footer>
     
             <script>
@@ -404,6 +427,17 @@ GRENEY! Greeting Next You！</div>
                     updateTotal();
                 }
                 function updateOrderSummary() { updateTotal(); }
+                function openLightbox(src) {
+                    document.getElementById('lightbox-img').src = src;
+                    document.getElementById('lightbox').style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+                
+                function closeLightbox() {
+                    document.getElementById('lightbox').style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+                
                 window.onload = function() {
                     const provinceSelect = document.getElementById('province');
                     provinceSelect.innerHTML = '<option value="">Pilih Provinsi</option>';
