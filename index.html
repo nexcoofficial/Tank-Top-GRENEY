@@ -7,9 +7,10 @@
     
             <style>
                 body { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background: #f8fafc;color: #222;margin:0;}
-                header { background: #2563eb; color: #fff; margin-bottom:0; }
+                header { background: #000; color: #fff; margin-bottom:0; }
                 .container { max-width: 1100px; margin:0 auto; padding:0 12px 30px 12px;}
-                .logo { font-size:1.4rem; font-weight:800; letter-spacing:-.01em; }
+                .logo { font-size:1.4rem; font-weight:800; letter-spacing:-.01em; display: flex; align-items: center; }
+                .logo img { height: 24px; object-fit: contain; }
                 .contact { font-size:1.08rem; display:flex; align-items:center; gap:7px; }
                 main.product-section {margin-top: 0;}
                 .product-section .container { display:grid; grid-template-columns:1fr 1fr; gap:36px; }
@@ -60,9 +61,9 @@
                     cursor:pointer; background: #e5e7eb; color: #222; box-shadow:0 1px 4px 0 #e5e7eb;
                 }
                 .payment-btn.active, .payment-btn.selected, .payment-btn[data-method="tf"].active {
-                    background: #2563eb !important; color: #fff !important; box-shadow:0 2px 8px 0 #2563eb22;
+                    background: #000 !important; color: #fff !important; box-shadow:0 2px 8px 0 rgba(0,0,0,0.1);
                 }
-                .payment-btn[data-method="tf"] { background: #e5e7eb; color: #2563eb; border:2px solid #2563eb;}
+                .payment-btn[data-method="tf"] { background: #e5e7eb; color: #000; border:2px solid #000;}
                 .payment-btn[data-method="cod"] { background: #f3f4f6; color: #444; border:2px solid #e5e7eb; }
                 .payment-btn[data-method="tf"]:hover { background: #1749b4; color: #fff;}
                 .payment-btn[data-method="cod"]:hover { background: #ddd; color: #222;}
@@ -137,10 +138,13 @@
             
 </head>
 <body>
-    <header>
+    <header style="background: #fff; border-bottom: 1px solid #e2e8f0;">
         <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;">
-            <div class="logo">greney.underwear.id</div>
-            <div class="contact">
+            <div class="logo">
+                <img src="https://greney.com/cdn/shop/files/20241123-122716_360x.png?v=1732336068" alt="greney.underwear.id" style="height: 24px;">
+                <span style="margin-left: 5px;background:#2563eb;color:white;border-radius:50%;padding:1px 4px 2px;font-size:12px;">✓</span>
+            </div>
+            <div class="contact" style="color: #222;">
                 <span style="font-size:1.2rem;"></span>
                 <span style="margin-left:8px;"></span>
             </div>
@@ -185,6 +189,11 @@ GRENEY! Greeting Next You！</div>
                     <div class="variant-selection">
                     <div class="form-group">
                         <label>Pilih Warna:</label>
+                        <div style="display:flex;gap:10px;margin-bottom:10px;">
+                            <img src="https://greney.com/cdn/shop/files/S1_32939651-1455-45a7-8cda-46cf1ce87214_360x.jpg?v=1741233633" style="width:50px;height:50px;object-fit:cover;border-radius:5px;cursor:pointer;border:2px solid transparent;" onclick="document.getElementById('colorSelect').value='cokelat';updateOrderSummary()" title="Cokelat">
+                            <img src="https://greney.com/cdn/shop/files/S2_198cbf18-d006-4eb7-96df-b75182c1ae00_360x.jpg?v=1741233633" style="width:50px;height:50px;object-fit:cover;border-radius:5px;cursor:pointer;border:2px solid transparent;" onclick="document.getElementById('colorSelect').value='hitam';updateOrderSummary()" title="Hitam">
+                            <img src="https://greney.com/cdn/shop/files/S3_f0faae34-f108-48f1-a113-1633f0fccff6_360x.jpg?v=1741233633" style="width:50px;height:50px;object-fit:cover;border-radius:5px;cursor:pointer;border:2px solid transparent;" onclick="document.getElementById('colorSelect').value='kulit';updateOrderSummary()" title="Kulit">
+                        </div>
                         <select id="colorSelect" required onchange="updateOrderSummary()">
                             <option value="">-- Pilih Warna --</option>
                             <option value="cokelat">cokelat</option><option value="hitam">hitam</option><option value="kulit">kulit</option>
@@ -280,7 +289,7 @@ GRENEY! Greeting Next You！</div>
             </div>
         </div>
     </main>
-    <footer style="text-align:center; color:#7f8899; font-size:13px; margin:25px 0 15px 0;">&copy; 2025 greney.underwear.id. Powered by nexcostore.</footer>
+    <footer style="text-align:center; color:#7f8899; font-size:13px; margin:25px 0 15px 0;">&copy; 2025 greney.underwear.id</footer>
     
             <script>
                 const indonesiaData = {"Jawa Barat":{"Bandung":["Cidadap","Cicendo","Coblong","Bandung Wetan"],"Bekasi":["Bekasi Barat","Bekasi Timur","Bekasi Selatan","Bekasi Utara"],"Bogor":["Bogor Tengah","Bogor Utara","Bogor Selatan","Bogor Timur"],"Depok":["Pancoran Mas","Sukmajaya","Sawangan","Cipayung"],"Cimahi":["Cimahi Selatan","Cimahi Tengah","Cimahi Utara"]},"DKI Jakarta":{"Jakarta Pusat":["Gambir","Tanah Abang","Menteng","Senen"],"Jakarta Selatan":["Kebayoran Baru","Tebet","Setiabudi","Mampang Prapatan"],"Jakarta Timur":["Matraman","Pulogadung","Jatinegara","Duren Sawit"],"Jakarta Barat":["Grogol Petamburan","Taman Sari","Tambora","Kebon Jeruk"],"Jakarta Utara":["Penjaringan","Pademangan","Tanjung Priok","Koja"]},"Jawa Tengah":{"Semarang":["Semarang Tengah","Semarang Utara","Semarang Selatan","Semarang Timur"],"Solo":["Laweyan","Serengan","Pasar Kliwon","Jebres"],"Yogyakarta":["Gondokusuman","Jetis","Tegalrejo","Umbulharjo"]},"Jawa Timur":{"Surabaya":["Genteng","Gubeng","Tegalsari","Wonokromo"],"Malang":["Klojen","Blimbing","Kedungkandang","Sukun"],"Sidoarjo":["Sidoarjo","Buduran","Candi","Porong"]},"Banten":{"Tangerang":["Tangerang Kota","Cipondoh","Karawaci","Pinang"],"Serang":["Serang Kota","Kasemen","Walantaka","Curug"]},"Bali":{"Denpasar":["Denpasar Barat","Denpasar Selatan","Denpasar Timur","Denpasar Utara"],"Badung":["Mengwi","Abiansemal","Petang","Kuta Utara"]},"Sumatera Utara":{"Medan":["Medan Kota","Medan Barat","Medan Timur","Medan Utara"],"Binjai":["Binjai Kota","Binjai Barat","Binjai Timur","Binjai Utara"]},"Sumatera Selatan":{"Palembang":["Ilir Barat I","Ilir Timur I","Seberang Ulu I","Kertapati"]},"Kalimantan Timur":{"Balikpapan":["Balikpapan Kota","Balikpapan Barat","Balikpapan Timur","Balikpapan Selatan"],"Samarinda":["Samarinda Kota","Samarinda Ulu","Samarinda Ilir","Sungai Kunjang"]},"Sulawesi Selatan":{"Makassar":["Makassar","Mariso","Mamajang","Tamalate"]}};
